@@ -12,19 +12,26 @@ public class FragmentFactory {
 
     public static Fragment getFragment(int position) {
         Fragment fragment = fms.get(position);
-        if(fragment != null) {
+        if (fragment != null) {
             return fragment;
         }
         switch (position) {
             case 0:
-//                fragment = new
+                fragment = new HomeFragment();
                 break;
             case 1:
+                fragment = new InvestFragment();
                 break;
             case 2:
+                fragment = new MeFragment();
                 break;
             case 3:
+                fragment = new MoreFragment();
                 break;
         }
+
+        fms.put(position, fragment);
+
+        return fragment;
     }
 }
